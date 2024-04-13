@@ -1,12 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
+
 
 @Component({
   selector: 'app-sign-up',
-  standalone: true,
-  imports: [],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
 
+  newUser: User = new User();
+
+  constructor(private userService: UserService, private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  signUp() {
+    this.userService.signUp(this.newUser).subscribe(() => {
+        window.alert("User Registered Successfully");
+        this.router.navigate(['signin']);
+    }, error => {
+        window.alert("User Registration Error");
+        console.log('Error: ', error)
+    });
+  }
 }

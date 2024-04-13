@@ -1,1 +1,12 @@
-<router-outlet />
+<nav role="navigation">
+    <a routerLink="/signup" title="Sign Up">Sign Up</a>
+    <span> | </span>
+    <a routerLink="/signin" title="Sign In">Sign In</a>
+    <span> | </span>
+    <a routerLink="/vehicle" title="Home">Home</a>
+    <span> | </span>
+    <button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
+    <button *ngIf="isLoggedIn()" (click)="getProfile()">Profile</button>
+  </nav>
+<router-outlet></router-outlet>
+  
