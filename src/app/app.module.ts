@@ -9,6 +9,11 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { UserComponent } from './components/user/user.component';
 import { RouterModule } from '@angular/router';
+import { Vehicle } from './models/vehicle';
+import { VehicleListComponent } from './components/vehicle-list/vehicle-list.component';
+import { VehicleNewComponent } from './components/vehicle-new/vehicle-new.component';
+import { VehicleEditComponent } from './components/vehicle-edit/vehicle-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +21,10 @@ import { RouterModule } from '@angular/router';
     SignUpComponent,
     SignInComponent,
     UserEditComponent,
-    UserComponent
+    UserComponent,
+    VehicleListComponent,
+    VehicleNewComponent,
+    VehicleEditComponent,
   ],
   imports: [
     BrowserModule,

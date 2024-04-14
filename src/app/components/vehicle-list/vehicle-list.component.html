@@ -1,1 +1,8 @@
-<p>vehicle-list works!</p>
+<h1>Vehicle List</h1>
+
+<div *ngIf="vehicleList">
+    <div *ngFor="let vehicle of vehicleList;">
+        <p>{{vehicle.make}}</p>
+        <hr>
+    </div>    
+</div>
