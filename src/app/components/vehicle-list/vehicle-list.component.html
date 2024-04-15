@@ -1,8 +1,17 @@
-<h1>Vehicle List</h1>
+<h1>Vehicle listings</h1>
 
 <div *ngIf="vehicleList">
-    <div *ngFor="let vehicle of vehicleList;">
-        <p>{{vehicle.make}}</p>
-        <hr>
-    </div>    
+    <mat-card class="example-card" *ngFor="let vehicle of vehicleList">
+        <mat-card-header>
+            <mat-card-title>{{vehicle.make}}</mat-card-title>
+            <mat-card-subtitle>Year: {{vehicle.year}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src="{{vehicle.photo}}">
+        <mat-card-content>
+            <p>Model: {{vehicle.model}}</p>
+            <p>Colour: {{vehicle.colour}}</p>
+            <p>Price: ${{vehicle.price}}</p>
+            <p>Seller: {{vehicle.userId}}</p>
+        </mat-card-content>
+    </mat-card>    
 </div>

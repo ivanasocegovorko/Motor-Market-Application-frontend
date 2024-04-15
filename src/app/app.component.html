@@ -1,12 +1,13 @@
-<nav role="navigation">
-    <a routerLink="/signup" title="Sign Up">Sign Up</a>
-    <span> | </span>
-    <a routerLink="/signin" title="Sign In">Sign In</a>
-    <span> | </span>
-    <a routerLink="/vehicle" title="Home">Home</a>
-    <span> | </span>
-    <button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
-    <button *ngIf="isLoggedIn()" (click)="getProfile()">Profile</button>
-  </nav>
+
+<mat-toolbar color="primary">
+  <mat-icon>menu</mat-icon>
+  <span>Motor Market</span>
+
+  <button mat-raised-button color="primary" [routerLink]="['/vehicle']" title="Home">Home</button>
+  <button mat-raised-button color="primary" [routerLink]="['/signup']" title="Sign Up">Sign Up</button>
+  <button mat-raised-button color="primary" [routerLink]="['/signin']" title="Sign In">Sign In</button>   
+         
+</mat-toolbar>
+
 <router-outlet></router-outlet>
   

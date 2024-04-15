@@ -14,6 +14,12 @@ import { VehicleListComponent } from './components/vehicle-list/vehicle-list.com
 import { VehicleNewComponent } from './components/vehicle-new/vehicle-new.component';
 import { VehicleEditComponent } from './components/vehicle-edit/vehicle-edit.component';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from "@angular/material/menu";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -31,9 +37,16 @@ import { VehicleEditComponent } from './components/vehicle-edit/vehicle-edit.com
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatCardModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatIconModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 
