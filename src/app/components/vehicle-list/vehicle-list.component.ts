@@ -12,6 +12,8 @@ import { UserService } from 'C:/Users/Ivana/Desktop/team-stranger-strings-fronte
 })
 export class VehicleListComponent implements OnInit {
 
+  id: string ="0"
+
   vehicleList: Vehicle[] = [];
 
   constructor(private vehicleService: VehicleService, private userService: UserService, private actRoute: ActivatedRoute, private router: Router) { }
@@ -20,6 +22,20 @@ export class VehicleListComponent implements OnInit {
     this.vehicleService.getAllVehicles().subscribe((vehicle: Vehicle[]) => {
       this.vehicleList = vehicle;
       console.log(this.vehicleList);
+    });
+  }
+
+  onDelete(VehicleId: string) {
+    this.vehicleService.deleteVehicle(VehicleId).subscribe(response => {
+      window.alert("Deleted Vehicle Listing Successfully");
+      this.vehicleService.getAllVehicles().subscribe(vehicle=> {
+        this.vehicleList = vehicle;
+      });
+    }, error => {
+      console.log('Error: ', error)
+      if (error.status === 401 || error.status === 403) {
+        this.router.navigate(['signin']);
+      }
     });
   }
 }

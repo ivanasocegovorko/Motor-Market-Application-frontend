@@ -1,1 +1,23 @@
-<p>vehicle-edit works!</p>
+<form #form ="ngForm"  (ngSubmit)="onSubmit()">
+    <h1>EDIT VEHICLE LISTING</h1>
+    <label>Make</label>
+    <input placeholder="Enter Vehicle Make" type="text" name="make" [(ngModel)]="currentVehicle.make"><br><br>
+    <br><br>
+    <label>Model</label>
+    <input placeholder="Enter Vehicle Model" type="text" name="model" [(ngModel)]="currentVehicle.model"><br><br>
+    <br><br>
+    <label>Year</label>
+    <input placeholder="Enter Vehicle Year" type="number" name="year" [(ngModel)]="currentVehicle.year"><br><br>
+    <br><br>
+    <label>Colour</label>
+    <input placeholder="Enter Vehicle Colour" type="text" name="colour" [(ngModel)]="currentVehicle.colour"><br><br>
+    <br><br>
+    <label>Photo</label>
+    <input placeholder="Enter Vehicle Photo URL" type="text" name="photo" [(ngModel)]="currentVehicle.photo"><br><br>
+    <br><br>
+    <label>Price</label>
+    <input placeholder="Enter Vehicle Price" type="number" name="price" [(ngModel)]="currentVehicle.price"><br><br>
+    <br><br>
+
+    <button mat-button type="submit">EDIT LISTING</button>
+</form>
