@@ -16,7 +16,7 @@
             <p>Seller: {{vehicle.userId}}</p>
         </mat-card-content>
         <div class="nav-link active">
-            <button mat-button [routerLink]='["/post", vehicle.vehicleId]'>EDIT</button>
+            <button mat-button [routerLink]='["/vehicle/", vehicle.vehicleId]'>EDIT</button>
             <button mat-button (click)="onDelete(vehicle.vehicleId!)">DELETE</button>
         </div>
     </mat-card>    
