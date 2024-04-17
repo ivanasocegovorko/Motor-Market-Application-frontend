@@ -1,1 +1,25 @@
-<p>vehicle-new works!</p>
+<h1>ADD NEW VEHICLE LISTING</h1>
+<form (ngSubmit)="addVehicle()">
+    <label>Make</label>
+    <input placeholder="Enter Vehicle Make" type="text" name="make" [(ngModel)]="newVehicle.make"><br><br>
+    <br><br>
+    <label>Model</label>
+    <input placeholder="Enter Vehicle Model" type="text" name="model" [(ngModel)]="newVehicle.model"><br><br>
+    <br><br>
+    <label>Year</label>
+    <input placeholder="Enter Vehicle Year" type="number" name="year" [(ngModel)]="newVehicle.year"><br><br>
+    <br><br>
+    <label>Colour</label>
+    <input placeholder="Enter Vehicle Colour" type="text" name="colour" [(ngModel)]="newVehicle.colour"><br><br>
+    <br><br>
+    <label>Photo</label>
+    <input placeholder="Enter Vehicle Photo URL" type="text" name="photo" [(ngModel)]="newVehicle.photo"><br><br>
+    <br><br>
+    <label>Price</label>
+    <input placeholder="Enter Vehicle Price" type="number" name="price" [(ngModel)]="newVehicle.price"><br><br>
+    <br><br>
+
+    <button>
+        Post!
+    </button>
+</form>
