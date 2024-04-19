@@ -7,11 +7,12 @@ import { VehicleNewComponent } from './components/vehicle-new/vehicle-new.compon
 import { VehicleEditComponent } from './components/vehicle-edit/vehicle-edit.component';
 import { UserComponent } from './components/user/user.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { VehicleDetailComponent } from './components/vehicle-detail/vehicle-detail.component';
 
 export const routes: Routes = [
     { 
         path: "",
-        redirectTo: "/signin",
+        redirectTo: "/vehicle",
         pathMatch: "full"
       },
       {
@@ -31,8 +32,12 @@ export const routes: Routes = [
         component: VehicleNewComponent
       },
       {
-        path: "vehicle/:id",
+        path: "edit/:id",
         component: VehicleEditComponent
+      },
+      {
+        path: "vehicle/:id",
+        component: VehicleDetailComponent
       },
       {
         path: "user/:email",

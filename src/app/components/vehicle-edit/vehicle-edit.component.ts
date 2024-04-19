@@ -11,7 +11,7 @@ import { VehicleService } from '../../services/vehicle.service';
 })
 export class VehicleEditComponent implements OnInit {
 
-  id: string = "0";
+  id: number = 0;
   
   currentVehicle: Vehicle = new Vehicle  ();
 
@@ -19,7 +19,8 @@ export class VehicleEditComponent implements OnInit {
 
   ngOnInit(): void {
     const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
-    this.vehicleService.getVehicle(routeId).subscribe(foundVehicle => {
+    this.id = parseInt(routeId);
+    this.vehicleService.getVehicleById(this.id).subscribe((foundVehicle: Vehicle) => {
       console.log(foundVehicle);
       this.currentVehicle = foundVehicle;
     });

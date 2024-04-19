@@ -1,7 +1,7 @@
 import { User } from "./user";
 
 export class Vehicle {
-    vehicleId?: string;
+    vehicleId?: number;
     make?: string;
     model?: string;
     year?: number;
@@ -11,7 +11,7 @@ export class Vehicle {
     user?: User;
     userId?: number;
 
-    constructor(id?: string, make?: string, model?: string, year?: number, colour?: string, photo?: string, price?: number, user?: User, userId?: number) {
+    constructor(id?: number, make?: string, model?: string, year?: number, colour?: string, photo?: string, price?: number, user?: User, userId?: number) {
         this.vehicleId = id;
         this.make = make;
         this.model = model;

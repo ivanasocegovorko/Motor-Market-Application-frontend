@@ -13,6 +13,7 @@ import { Vehicle } from './models/vehicle';
 import { VehicleListComponent } from './components/vehicle-list/vehicle-list.component';
 import { VehicleNewComponent } from './components/vehicle-new/vehicle-new.component';
 import { VehicleEditComponent } from './components/vehicle-edit/vehicle-edit.component';
+import { VehicleDetailComponent} from './components/vehicle-detail/vehicle-detail.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from "@angular/material/menu";

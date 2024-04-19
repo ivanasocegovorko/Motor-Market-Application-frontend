@@ -12,7 +12,7 @@ import { UserService } from 'C:/Users/Ivana/Desktop/team-stranger-strings-fronte
 })
 export class VehicleListComponent implements OnInit {
 
-  id: string ="0"
+  id: number = 0
 
   vehicleList: Vehicle[] = [];
 
@@ -25,7 +25,7 @@ export class VehicleListComponent implements OnInit {
     });
   }
 
-  onDelete(VehicleId: string) {
+  onDelete(VehicleId: number) {
     this.vehicleService.deleteVehicle(VehicleId).subscribe(response => {
       window.alert("Deleted Vehicle Listing Successfully");
       this.vehicleService.getAllVehicles().subscribe(vehicle=> {

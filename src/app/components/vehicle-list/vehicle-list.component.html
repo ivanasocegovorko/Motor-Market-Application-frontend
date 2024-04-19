@@ -2,13 +2,13 @@
 
 <button mat-raised-button color="primary" [routerLink]="['/vehicle/new']" title="New">Add New Listing</button>
 
-<div *ngIf="vehicleList">
+<div class="container responsive-grid" *ngIf="vehicleList">
     <mat-card class="example-card" *ngFor="let vehicle of vehicleList">
         <mat-card-header>
             <mat-card-title>{{vehicle.make}}</mat-card-title>
             <mat-card-subtitle>Year: {{vehicle.year}}</mat-card-subtitle>
         </mat-card-header>
-        <img src="{{vehicle.photo}}">
+        <img mat-card-image class="mat-image" src={{vehicle.photo}} alt={{vehicle.make}}>
         <mat-card-content>
             <p>Model: {{vehicle.model}}</p>
             <p>Colour: {{vehicle.colour}}</p>
@@ -16,7 +16,8 @@
             <p>Seller: {{vehicle.userId}}</p>
         </mat-card-content>
         <div class="nav-link active">
-            <button mat-button [routerLink]='["/vehicle/", vehicle.vehicleId]'>EDIT</button>
+            <button mat-button [routerLink]='["/vehicle/", vehicle.vehicleId]'>VIEW</button>
+            <button mat-button [routerLink]='["/edit/", vehicle.vehicleId]'>EDIT</button>
             <button mat-button (click)="onDelete(vehicle.vehicleId!)">DELETE</button>
         </div>
     </mat-card>    

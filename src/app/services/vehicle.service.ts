@@ -17,7 +17,7 @@ export class VehicleService {
   }
 
 
-  getVehicle(vehicleId: string): Observable<Vehicle> {
+  getVehicleById(vehicleId: number): Observable<Vehicle> {
     return this.http.get<Vehicle>(this.baseURL + "/" + vehicleId);
   }
 
@@ -26,11 +26,11 @@ export class VehicleService {
       return this.http.post(this.baseURL, newVehicle);
   }
 
-  editVehicle(vehicleId: string, editedVehicle: Vehicle): Observable<Vehicle> {
+  editVehicle(vehicleId: number, editedVehicle: Vehicle): Observable<Vehicle> {
       return this.http.put<Vehicle>(this.baseURL + "/" + vehicleId, editedVehicle);
   }
 
-  deleteVehicle(vehicleId: string): Observable<any> {
+  deleteVehicle(vehicleId: number): Observable<any> {
     return this.http.delete<any>(this.baseURL + "/" + vehicleId)
   }
 }
