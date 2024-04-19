@@ -1,0 +1,35 @@
+.container {
+    padding: 100px 200px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+
+mat-card-actions {
+    align-self: center;
+}
+
+mat-card-header {
+    align-self: center;
+}
+
+label {
+    padding-right: 15px;
+    display: block;
+    width: 130px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: start;
+}
+  
+input {
+    width: 96%;
+    padding: 10px;
+    border: solid rgb(216, 215, 215) 1px;
+    border-radius: 5px;
+}
