@@ -34,7 +34,7 @@ export class UserComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.Email = params['Email'];
       this.loadUserData();
-      // this.loadUservehicles();
+      this.loadUservehicles();
     });
   }
 
@@ -49,19 +49,19 @@ export class UserComponent implements OnInit {
       }
     );
   }
-  // loadUservehicles() {
-  //   console.log('Loading user vehicles for:', this.Email);
+  loadUservehicles() {
+    console.log('Loading user vehicles for:', this.Email);
     
-  //   this.vehicleService.getUsersVehicles(this.Email).subscribe(
-  //     (uservehicles: vehicle[]) => {
-  //       console.log('User vehicles retrieved successfully:', uservehicles);
-  //       this.vehicleList = uservehicles;
-  //     },
-  //     (error) => {
-  //       console.log('Error retrieving user vehicles:', error);
-  //     }
-  //   );
-  // }
+    this.vehicleService.getUsersVehicles(this.Email).subscribe(
+      (uservehicles: Vehicle[]) => {
+        console.log('User vehicles retrieved successfully:', uservehicles);
+        this.vehicleList = uservehicles;
+      },
+      (error) => {
+        console.log('Error retrieving user vehicles:', error);
+      }
+    );
+  }
 
   deleteVehicle(vehicle: Vehicle) {
     if (vehicle.vehicleId)
@@ -109,5 +109,19 @@ export class UserComponent implements OnInit {
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
     return JSON.parse(jsonPayload);
+  }
+
+  onDelete(VehicleId: number) {
+    this.vehicleService.deleteVehicle(VehicleId).subscribe(response => {
+      window.alert("Deleted Vehicle Listing Successfully");
+      this.vehicleService.getUsersVehicles(this.Email).subscribe(vehicle=> {
+        this.vehicleList = vehicle;
+      });
+    }, error => {
+      console.log('Error: ', error)
+      if (error.status === 401 || error.status === 403) {
+        this.router.navigate(['signin']);
+      }
+    });
   }
 }
