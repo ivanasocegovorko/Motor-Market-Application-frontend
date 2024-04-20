@@ -40,10 +40,10 @@ export const routes: Routes = [
         component: VehicleDetailComponent
       },
       {
-        path: "user/:email",
+        path: "user/:Email",
         component: UserComponent
       },{
-        path: "user/:email/edit",
+        path: "user/:Email/edit",
         component: UserEditComponent
       },
 ];

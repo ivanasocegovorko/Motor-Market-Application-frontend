@@ -32,11 +32,11 @@ export class AppComponent {
   getProfile() {
     this.userService.getCurrentUser().subscribe(
       (user: User) => {
-        if (user && user.Email) {
-          this.userService.getUserByEmail(user.Email).subscribe(
+        if (user && user.email) {
+          this.userService.getUserByEmail(user.email).subscribe(
             (userByEmail: User) => {
               if (userByEmail) {
-                this.router.navigate(['user', userByEmail.Email, 'post']);
+                this.router.navigate(['user', user.email]);
               } else {
                 console.error('User not found');
               }
@@ -46,7 +46,7 @@ export class AppComponent {
             }
           );
         } else {
-          console.error('Current user not found');
+          console.error('Current user not found 2');
         }
       },
       (error) => {

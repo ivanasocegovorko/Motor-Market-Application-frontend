@@ -9,6 +9,7 @@ import { Vehicle } from '../models/vehicle';
 export class VehicleService {
 
   baseURL: string = "http://localhost:4000/api/vehicle";
+  tokenKey: string = "myPostToken";
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +24,10 @@ export class VehicleService {
 
 
   createVehicle(newVehicle: Vehicle) {
-      return this.http.post(this.baseURL, newVehicle);
+    let reqHeaders = {
+      Authorization: `Bearer ${localStorage.getItem(this.tokenKey)}`
+  }
+      return this.http.post(this.baseURL, newVehicle, { headers: reqHeaders });
   }
 
   editVehicle(vehicleId: number, editedVehicle: Vehicle): Observable<Vehicle> {

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Vehicle } from "C:/Users/Ivana/Desktop/team-stranger-strings-frontend/src/app/models/vehicle";
-import { VehicleService } from 'C:/Users/Ivana/Desktop/team-stranger-strings-frontend/src/app/services/vehicle.service';
+import { Vehicle } from "../../models/vehicle";
+import { VehicleService } from '../../services/vehicle.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'C:/Users/Ivana/Desktop/team-stranger-strings-frontend/src/app/models/user';
-import { UserService } from 'C:/Users/Ivana/Desktop/team-stranger-strings-frontend/src/app/services/user.service';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-vehicle-list',
