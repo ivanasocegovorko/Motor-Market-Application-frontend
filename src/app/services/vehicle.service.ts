@@ -17,11 +17,9 @@ export class VehicleService {
       return this.http.get<Vehicle[]>(this.baseURL);
   }
 
-
   getVehicleById(vehicleId: number): Observable<Vehicle> {
     return this.http.get<Vehicle>(this.baseURL + "/" + vehicleId);
   }
-
 
   createVehicle(newVehicle: Vehicle) {
     let reqHeaders = {
@@ -37,6 +35,7 @@ export class VehicleService {
   deleteVehicle(vehicleId: number): Observable<any> {
     return this.http.delete<any>(this.baseURL + "/" + vehicleId)
   }
+
   getUsersVehicles(email: string): Observable<Vehicle[]> {
     return this.http.get<Vehicle[]>(`${this.baseURL}/${email}`);
   }

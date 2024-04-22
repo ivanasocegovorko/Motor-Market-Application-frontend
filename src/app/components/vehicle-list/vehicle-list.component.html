@@ -14,12 +14,17 @@
             <p>Colour: {{vehicle.colour}}</p>
             <p>Price: ${{vehicle.price}}</p>
             <p>Seller: {{vehicle.user?.FirstName}}</p>
+            <p>{{vehicle.userId}}</p>
+            <p>{{vehicle.user?.email}}</p>
         </mat-card-content>
-        <mat-card-actions>
+        <mat-card-actions *ngIf="currentUser.email == vehicle.user?.email" class="container responsive-grid">
             <button mat-button [routerLink]='["/vehicle/", vehicle.vehicleId]'>VIEW</button>
             <button mat-button [routerLink]='["/edit/", vehicle.vehicleId]'>EDIT</button>
             <button mat-button (click)="onDelete(vehicle.vehicleId!)">DELETE</button>
         </mat-card-actions>
-    </mat-card>    
+        <mat-card-actions *ngIf=" user.email" class="container responsive-grid">
+            <button mat-button [routerLink]='["/vehicle/", vehicle.vehicleId]'>VIEW</button>
+        </mat-card-actions>
+    </mat-card>
 </div>
 

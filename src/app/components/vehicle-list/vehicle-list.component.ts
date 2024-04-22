@@ -16,6 +16,14 @@ export class VehicleListComponent implements OnInit {
 
   vehicleList: Vehicle[] = [];
 
+  currentUser: User = new User  ();
+
+  author: User = new User  ();
+
+  token = localStorage.getItem("token")!;
+
+  user: any = "";
+
   constructor(private vehicleService: VehicleService, private userService: UserService, private actRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -23,7 +31,43 @@ export class VehicleListComponent implements OnInit {
       this.vehicleList = vehicle;
       console.log(this.vehicleList);
     });
+
+    const routeId = this.tokenDecode('myPostToken');
+    this.userService.getCurrentUser().subscribe(foundUser => {
+      console.log(foundUser);
+      console.log(foundUser.email);
+      this.currentUser = foundUser;
+  });
   }
+
+  /*public getAuthorById(authId?: string) {
+    this.userService.getUserById(authId!).subscribe(foundUser => {
+      this.author = foundUser;
+  });
+  }*/
+
+  public tokenDecode(tokenKey: string) {
+    var token = localStorage.getItem(tokenKey)!
+    return JSON.parse(atob(token.split('.')[1])).post_userId;
+  } 
+
+  public localStorageItem(tokenKey: string) {
+    return localStorage.getItem(tokenKey);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   onDelete(VehicleId: number) {
     this.vehicleService.deleteVehicle(VehicleId).subscribe(response => {
@@ -38,4 +82,6 @@ export class VehicleListComponent implements OnInit {
       }
     });
   }
+
+
 }

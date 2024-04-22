@@ -27,6 +27,7 @@
                 <p>Colour: {{vehicle.colour}}</p>
                 <p>Price: ${{vehicle.price}}</p>
                 <p>Seller: {{vehicle.user?.FirstName}}</p>
+                <p>Seller: {{vehicle.user?.FirstName}}</p>
             </mat-card-content>
             <mat-card-actions>
                 <button mat-button [routerLink]='["/vehicle/", vehicle.vehicleId]'>VIEW</button>
