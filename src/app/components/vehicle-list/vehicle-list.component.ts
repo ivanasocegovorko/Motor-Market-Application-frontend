@@ -40,11 +40,7 @@ export class VehicleListComponent implements OnInit {
   });
   }
 
-  /*public getAuthorById(authId?: string) {
-    this.userService.getUserById(authId!).subscribe(foundUser => {
-      this.author = foundUser;
-  });
-  }*/
+
 
   public tokenDecode(tokenKey: string) {
     var token = localStorage.getItem(tokenKey)!

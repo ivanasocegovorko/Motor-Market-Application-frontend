@@ -10,8 +10,9 @@ export class Vehicle {
     price?: number;
     user?: User;
     userId?: number;
+    userEmail?: string;
 
-    constructor(id?: number, make?: string, model?: string, year?: number, colour?: string, photo?: string, price?: number, user?: User, userId?: number) {
+    constructor(id?: number, make?: string, model?: string, year?: number, colour?: string, photo?: string, price?: number, user?: User, userId?: number, userEmail?: string) {
         this.vehicleId = id;
         this.make = make;
         this.model = model;
@@ -21,5 +22,6 @@ export class Vehicle {
         this.price = price;
         this.user = user;
         this.userId = userId;
+        this.userEmail = userEmail;
     }
 }
