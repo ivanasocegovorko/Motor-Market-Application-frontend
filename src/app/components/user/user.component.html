@@ -4,20 +4,17 @@
         <mat-card-title>User Profile: {{ user.email }}</mat-card-title>
         <mat-card-subtitle>Name: {{ user.firstName }} {{ user.lastName }}</mat-card-subtitle>
         <mat-card-subtitle>Location: {{ user.location }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ user.bio }}</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content>
-        <p>{{ user.bio }}</p>
-      </mat-card-content>
       <mat-card-actions *ngIf="isLoggedIn(user?.email)">
         <button mat-button [routerLink]="['/user', user.email, 'edit']">Edit</button>
+        <button class="new" mat-button color="primary" [routerLink]="['/vehicle/new']" title="New">Add New Listing</button>
       </mat-card-actions>
     </mat-card>
-  <h1>ADD NEW VEHICLE LISTING</h1>
-    <button mat-raised-button color="primary" [routerLink]="['/vehicle/new']" title="New">Add New Listing</button>
 
-    <div *ngIf="isLoggedIn(user?.email)" class="container responsive-grid">
+    <div class="container responsive-grid">
         <mat-card class="example-card" *ngFor="let vehicle of vehicleList">
-            <mat-card-header>
+            <mat-card-header class="header">
                 <mat-card-title>{{vehicle.make}}</mat-card-title>
                 <mat-card-subtitle>Year: {{vehicle.year}}</mat-card-subtitle>
             </mat-card-header>
@@ -30,8 +27,8 @@
             </mat-card-content>
             <mat-card-actions>
                 <button mat-button [routerLink]='["/vehicle/", vehicle.vehicleId]'>VIEW</button>
-                <button mat-button [routerLink]='["/edit/", vehicle.vehicleId]'>EDIT</button>
-                <button mat-button (click)="onDelete(vehicle.vehicleId!)">DELETE</button>
+                <button *ngIf="isLoggedIn(user?.email)" mat-button [routerLink]='["/edit/", vehicle.vehicleId]'>EDIT</button>
+                <button *ngIf="isLoggedIn(user?.email)" mat-button (click)="onDelete(vehicle.vehicleId!)">DELETE</button>
             </mat-card-actions>
         </mat-card>    
     </div>

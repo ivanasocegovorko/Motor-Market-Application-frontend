@@ -19,7 +19,7 @@
             <p>
                 <b>Colour: </b>{{currentVehicle.colour}}
             </p>
-            <p>
+            <p [routerLink]="['/user', currentVehicle.userEmail]">
                 <b>Seller: </b>{{currentVehicle.userEmail}}
             </p>
             <p>
