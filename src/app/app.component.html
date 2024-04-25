@@ -1,12 +1,15 @@
 <mat-toolbar color="primary">
   <mat-icon>menu</mat-icon>
-  <span>Motor Market</span>
-
-  <button mat-raised-button color="primary" [routerLink]="['/vehicle']" title="Home">Home</button>
-  <button mat-raised-button color="primary" *ngIf="!isLoggedIn()" [routerLink]="['/signup']" title="Sign Up">Sign Up</button>   
-  <button mat-raised-button color="primary" *ngIf="!isLoggedIn()" [routerLink]="['/signin']" title="Sign In">Sign In</button>   
-  <button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
-  <button *ngIf="isLoggedIn()" (click)="getProfile()">Profile</button>       
+  <span class="title">Motor Market</span>
+  <span class="buttons"></span>
+  <div>
+    <button mat-raised-button [routerLink]="['/vehicle']" title="Home">Home</button>
+    <button mat-raised-button *ngIf="!isLoggedIn()" [routerLink]="['/signup']" title="Sign Up">Sign Up</button>   
+    <button mat-raised-button *ngIf="!isLoggedIn()" [routerLink]="['/signin']" title="Sign In">Sign In</button>   
+    <button mat-raised-button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
+    <button mat-raised-button *ngIf="isLoggedIn()" (click)="getProfile()">Profile</button>   
+  </div>
+      
 </mat-toolbar>
 
 <router-outlet></router-outlet>

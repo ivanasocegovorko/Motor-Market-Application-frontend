@@ -21,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatMenuModule,
     MatSidenavModule,
     MatIconModule,
+    MatButtonModule,
   ],
   providers: [
     provideAnimationsAsync()

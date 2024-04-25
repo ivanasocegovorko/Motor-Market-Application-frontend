@@ -31,3 +31,7 @@
   .new {
     margin-left: 10px;
   }
+
+  .example-card {
+    height: 500px;
+  }

@@ -1,33 +1,27 @@
-<div class="container">
-    <mat-card class="example-card">        
-        <mat-card-header>
-            <mat-card-title>EDIT VEHICLE LISTING</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <form #form ="ngForm" (ngSubmit)="onSubmit()">
-                <label>Make</label>
-                <input placeholder="Enter Vehicle Make" type="text" name="make" [(ngModel)]="currentVehicle.make"><br><br>
-                <br><br>
-                <label>Model</label>
-                <input placeholder="Enter Vehicle Model" type="text" name="model" [(ngModel)]="currentVehicle.model"><br><br>
-                <br><br>
-                <label>Year</label>
-                <input placeholder="Enter Vehicle Year" type="number" name="year" [(ngModel)]="currentVehicle.year"><br><br>
-                <br><br>
-                <label>Colour</label>
-                <input placeholder="Enter Vehicle Colour" type="text" name="colour" [(ngModel)]="currentVehicle.colour"><br><br>
-                <br><br>
-                <label>Photo</label>
-                <input placeholder="Enter Vehicle Photo URL" type="text" name="photo" [(ngModel)]="currentVehicle.photo"><br><br>
-                <br><br>
-                <label>Price</label>
-                <input placeholder="Enter Vehicle Price" type="number" name="price" [(ngModel)]="currentVehicle.price"><br><br>
-                <br><br>
-                <mat-card-actions>
-                    <button mat-button type="submit">EDIT ITEM</button>
-                </mat-card-actions>
-            </form> 
-        </mat-card-content>
-    </mat-card>
+<div class="container responsive-grid">
+    <h1>EDIT VEHICLE LISTING</h1>
+    <form #form ="ngForm" (ngSubmit)="onSubmit()">
+        <label>Make</label>
+        <input placeholder="Enter Vehicle Make" type="text" name="make" [(ngModel)]="currentVehicle.make"><br><br>
+        <br><br>
+        <label>Model</label>
+        <input placeholder="Enter Vehicle Model" type="text" name="model" [(ngModel)]="currentVehicle.model"><br><br>
+        <br><br>
+        <label>Year</label>
+        <input placeholder="Enter Vehicle Year" type="number" name="year" [(ngModel)]="currentVehicle.year"><br><br>
+        <br><br>
+        <label>Colour</label>
+        <input placeholder="Enter Vehicle Colour" type="text" name="colour" [(ngModel)]="currentVehicle.colour"><br><br>
+        <br><br>
+        <label>Photo</label>
+        <input placeholder="Enter Vehicle Photo URL" type="text" name="photo" [(ngModel)]="currentVehicle.photo"><br><br>
+        <br><br>
+        <label>Price</label>
+        <input placeholder="Enter Vehicle Price" type="number" name="price" [(ngModel)]="currentVehicle.price"><br><br>
+        <br><br>
+        <mat-card-actions>
+            <button mat-button type="submit">EDIT ITEM</button>
+        </mat-card-actions>
+    </form> 
 </div> 
 

@@ -7,11 +7,12 @@ import { NgIf } from '@angular/common';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import {RouterModule} from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-vehicle-detail',
   standalone: true,
-  imports: [MatCardModule, NgIf, RouterModule],
+  imports: [MatCardModule, NgIf, RouterModule, MatButtonModule],
   templateUrl: './vehicle-detail.component.html',
   styleUrl: './vehicle-detail.component.css'
 })

@@ -1,3 +1,15 @@
+.heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h1{
+  font-size: 30px;
+}
+
 .mat-image {
   align-self: center;
   width: 400px;
@@ -17,7 +29,7 @@
 }
 
 .example-card {
-  height: 600px;
+  height: 500px;
 }
 
 mat-card-actions {
@@ -26,4 +38,9 @@ mat-card-actions {
 
 mat-card-header {
   align-self: center;
+}
+
+.buttons {
+  display: block;
+  margin: auto;
 }

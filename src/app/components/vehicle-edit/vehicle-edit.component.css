@@ -1,5 +1,5 @@
 .container {
-    padding: 100px 200px;
+    padding: 50px 200px;
     align-items: center;
     text-align: center;
     align-content: center;
@@ -32,4 +32,10 @@ input {
     padding: 10px;
     border: solid rgb(216, 215, 215) 1px;
     border-radius: 5px;
+}
+
+.responsive-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 }

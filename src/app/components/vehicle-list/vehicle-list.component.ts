@@ -9,6 +9,7 @@ import { UserService } from '../../services/user.service';
   selector: 'app-vehicle-list',
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.css'
+
 })
 export class VehicleListComponent implements OnInit {
 
@@ -40,6 +41,9 @@ export class VehicleListComponent implements OnInit {
   });
   }
 
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('myPostToken');
+  }
 
 
   public tokenDecode(tokenKey: string) {
