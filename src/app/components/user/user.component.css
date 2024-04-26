@@ -1,14 +1,16 @@
 .mat-image {
     align-self: center;
-    width: 400px;
+    width: 350px;
   }
   
   .container {
-    padding: 20px;
     align-items: center;
     text-align: center;
     align-content: center;
-  }
+    width: 500px;
+    margin: auto;
+    padding-top: 50px;
+}
   
   .responsive-grid {
     display: grid;
