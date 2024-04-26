@@ -36,6 +36,6 @@ input {
 
 .responsive-grid {
     display: grid;
-    gap: 25px;
+    gap: 5px;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   }
