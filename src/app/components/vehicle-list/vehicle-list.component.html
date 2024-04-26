@@ -15,7 +15,6 @@
             <p>Model: {{vehicle.model}}</p>
             <p>Colour: {{vehicle.colour}}</p>
             <p>Price: ${{vehicle.price}}</p>
-            <p [routerLink]="['/user', vehicle.userEmail]">Seller: {{vehicle.userEmail}}</p>
         </mat-card-content>
         <mat-card-actions class="container responsive-grid">
             <button mat-button [routerLink]='["/vehicle/", vehicle.vehicleId]'>VIEW</button>

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../../models/vehicle';
-import { UserService } from '../../services/user.service';
 import { VehicleService } from '../../services/vehicle.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../../models/user';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,13 +10,10 @@ import { User } from '../../models/user';
   styleUrl: './vehicle-new.component.css'
 })
 export class VehicleNewComponent implements OnInit{
-  currentUser: User = new User  ();
 
   newVehicle: Vehicle = new Vehicle();
 
-  vehicleList: Vehicle[] = [];
-
-  constructor(private vehicleService: VehicleService,private userService: UserService, private actRoute: ActivatedRoute, private router: Router) { }
+  constructor(private vehicleService: VehicleService, private router: Router) { }
 
   ngOnInit(): void {
   }
